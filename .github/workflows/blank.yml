@@ -19,3 +19,17 @@ jobs:
       - run: docker build -t ghcr.io/hatabech/task22:1.0 .
       - run: docker push ghcr.io/hatabech/task22:1.0
       - run: ssh -o "StrictHostKeyChecking no" 'hatabech-task22-j1tapeyazy6#abIlrPNNaA9jIosEoYq1I9GjlXsc0OPs@hatabech-task22-j1tapeyazy6.ssh.ws-eu106.gitpod.io' 'cd /workspace/task22/ && docker compose pull && docker compose up -d'
+      - name: send default message
+        if: success()
+        uses: appleboy/telegram-action@master
+        with:
+          message: "Сделано успешно"
+          to: 1321211478
+          token: 6951928575:AAFvUKazfHTe2SF4ek5Eco0Ce3vlIjMpt9k
+      - name: send default message
+        if: failure()
+        uses: appleboy/telegram-action@master
+        with:
+          message: "Сделано no успешно"
+          to: 1321211478
+          token: 6951928575:AAFvUKazfHTe2SF4ek5Eco0Ce3vlIjMpt9k

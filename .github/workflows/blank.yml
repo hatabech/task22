@@ -23,13 +23,13 @@ jobs:
         if: success()
         uses: appleboy/telegram-action@master
         with:
-          message: "Сделано успешно"
+          message: "мы победили"
           to: 1321211478
           token: 6951928575:AAFvUKazfHTe2SF4ek5Eco0Ce3vlIjMpt9k
       - name: send default message
         if: failure()
         uses: appleboy/telegram-action@master
         with:
-          message: "Сделано no успешно"
+          message: "мы зафейлились"
           to: 1321211478
           token: 6951928575:AAFvUKazfHTe2SF4ek5Eco0Ce3vlIjMpt9k

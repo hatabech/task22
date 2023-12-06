@@ -10,4 +10,9 @@ FROM node:8
 
 WORKDIR /app
 
-ENTRYPOINT ["node"]
+COPY package.json .
+RUN npm install
+
+COPY node.js .
+
+ENTRYPOINT ["node","node.js"]

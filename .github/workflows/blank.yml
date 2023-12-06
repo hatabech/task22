@@ -18,4 +18,4 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - run: docker build -t ghcr.io/hatabech/task22:1.0 .
       - run: docker push ghcr.io/hatabech/task22:1.0
-      - run: ssh -o "StrictHostKeyChecking no" 'hatabech-task22-j1tapeyazy6#mSk6ABTiHM3iSoy3gjPNaTLiQ-6Tw8Z9@hatabech-task22-j1tapeyazy6.ssh.ws-eu106.gitpod.io' 'cd /workspace/task22/ && docker-compose pull && docker-compose up -d'
+      - run: ssh -o "StrictHostKeyChecking no" 'hatabech-task22-j1tapeyazy6#mSk6ABTiHM3iSoy3gjPNaTLiQ-6Tw8Z9@hatabech-task22-j1tapeyazy6.ssh.ws-eu106.gitpod.io' 'cd /workspace/task22/ && docker compose pull && docker compose up -d'
